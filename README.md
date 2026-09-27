@@ -237,6 +237,7 @@ For detailed citation guidance, see [`CITATION.md`](CITATION.md).
 │     ├─ entry-language-registry.csv
 │     └─ Registry v2 Specification.md
 ├─ tools/
+│  ├─ check_repository_hygiene.py
 │  ├─ validate_registry_v2_identity.py
 │  ├─ validate_registry_v2_nlang.py
 │  ├─ generate_entries_json_v2_nlang.py
@@ -253,6 +254,7 @@ Repository-local validation and catalog tools are included under `tools/`.
 
 They resolve the repository root from their own location, so they can be run from any working directory after cloning the repository.
 
+    python3 tools/check_repository_hygiene.py
     python3 tools/validate_registry_v2_identity.py
     python3 tools/validate_registry_v2_nlang.py
     python3 tools/generate_entries_json_v2_nlang.py

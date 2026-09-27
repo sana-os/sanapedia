@@ -37,3 +37,6 @@ jobs:
 
       - name: Classify missing references
         run: python3 tools/classify_missing_links_v2.py
+
+      - name: Check repository Markdown hygiene
+        run: python3 tools/check_repository_hygiene.py
