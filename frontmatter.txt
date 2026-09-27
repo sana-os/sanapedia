@@ -7,7 +7,7 @@ This document defines the minimum frontmatter schema for public sanapedia Markdo
 The schema exists to support:
 
 * stable entry identification;
-* bilingual mapping;
+* language-manifestation mapping;
 * citation;
 * revision tracking;
 * AI and RAG use;
@@ -26,7 +26,7 @@ Historical claims, evidence, interpretation, uncertainty, and hypotheses belong 
 
 Every public sanapedia entry must include a frontmatter block.
 
-```yaml id="qs56vb"
+```yaml
 ---
 entry_key: "sp_00000010"
 title: "Osman I"
@@ -49,7 +49,7 @@ It must not change when the title, preferred name, slug, URL, file path, languag
 
 ### 2.1 `entry_key`
 
-```yaml id="q6im7j"
+```yaml
 entry_key: "sp_00000010"
 ```
 
@@ -60,14 +60,14 @@ Rules:
 * required;
 * quoted string;
 * format: `sp_00000000`;
-* must match the entry-key registry;
 * must never be reused;
+* must appear in `registry/v2/entry-registry.csv`;
 * must not encode type, period, language, geography, status, or hierarchy;
-* corresponding Japanese and English versions of the same research entry share the same `entry_key`.
+* all language manifestations of the same research entry share the same `entry_key`.
 
 Recommended validation pattern:
 
-```text id="rsjtr5"
+```text
 ^sp_[0-9]{8}$
 ```
 
@@ -75,7 +75,7 @@ Recommended validation pattern:
 
 ### 2.2 `title`
 
-```yaml id="eatost"
+```yaml
 title: "Osman I"
 ```
 
@@ -91,11 +91,11 @@ Rules:
 
 Examples:
 
-```yaml id="gsnu5r"
+```yaml
 title: "Osman I"
 ```
 
-```yaml id="6oi5ih"
+```yaml
 title: "オスマン1世"
 ```
 
@@ -103,41 +103,44 @@ title: "オスマン1世"
 
 ### 2.3 `language`
 
-```yaml id="22tjm0"
+```yaml
 language: "en"
 ```
 
 Language of the file.
 
-Allowed initial values:
+The permitted language set is not fixed by this schema.
 
-```text id="nrp0a4"
+Language availability is derived from `registry/v2/entry-language-registry.csv`.
+
+Language tags use normalized lowercase forms suitable for stable machine processing and public routing.
+
+Examples:
+
+```text
 en
 ja
+tr
+ar
+fr
+de
+zh-hant
+pt-br
 ```
 
 Rules:
 
 * required;
-* lowercase;
+* normalized lowercase language tag;
 * quoted string;
-* must match the file’s language root.
-
-Examples:
-
-```yaml id="6j4m27"
-language: "en"
-```
-
-```yaml id="k39hdh"
-language: "ja"
-```
+* must agree with the manifestation language in `entry-language-registry.csv`;
+* must correspond to the file’s language root.
 
 ---
 
 ### 2.4 `status`
 
-```yaml id="nv5e41"
+```yaml
 status: "active"
 ```
 
@@ -147,7 +150,7 @@ Required.
 
 Initial allowed values:
 
-```text id="w12mj2"
+```text
 draft
 active
 provisional
@@ -158,7 +161,7 @@ withdrawn
 
 Recommended use:
 
-```text id="1ygnzz"
+```text
 draft
 = not intended for public use
 
@@ -188,7 +191,7 @@ Rules:
 
 ### 2.5 `entity_type`
 
-```yaml id="oo2758"
+```yaml
 entity_type: "person"
 ```
 
@@ -198,7 +201,7 @@ Required.
 
 Initial allowed values:
 
-```text id="ov3k6m"
+```text
 person
 event
 timeline
@@ -213,7 +216,7 @@ index
 
 Recommended use:
 
-```text id="wze85q"
+```text
 person
 = historical person or named individual
 
@@ -255,7 +258,7 @@ Rules:
 
 ### 2.6 `content_type`
 
-```yaml id="vlmthj"
+```yaml
 content_type: "historical_entry"
 ```
 
@@ -265,7 +268,7 @@ Required.
 
 Initial allowed values:
 
-```text id="9zx4xd"
+```text
 historical_entry
 historical_hub
 timeline
@@ -278,7 +281,7 @@ column
 
 Recommended use:
 
-```text id="7us3od"
+```text
 historical_entry
 = ordinary historical article
 
@@ -312,12 +315,12 @@ Rules:
 
 Example:
 
-```yaml id="j1ew3l"
+```yaml
 entity_type: "historical_hub"
 content_type: "historical_hub"
 ```
 
-```yaml id="m4yois"
+```yaml
 entity_type: "event"
 content_type: "historical_entry"
 ```
@@ -326,7 +329,7 @@ content_type: "historical_entry"
 
 ### 2.7 `revision`
 
-```yaml id="wsk9vu"
+```yaml
 revision: "0.2"
 ```
 
@@ -343,7 +346,7 @@ Rules:
 
 Recommended initial pattern:
 
-```text id="g1wslk"
+```text
 0.1
 0.2
 0.3
@@ -353,7 +356,7 @@ Recommended initial pattern:
 
 Suggested meaning:
 
-```text id="ghtnhy"
+```text
 0.x
 = early public or pre-stable research version
 
@@ -368,7 +371,7 @@ Suggested meaning:
 
 ### 2.8 `updated`
 
-```yaml id="vqpx6e"
+```yaml
 updated: "2026-07-05"
 ```
 
@@ -386,7 +389,7 @@ Rules:
 
 Recommended validation pattern:
 
-```text id="5rap6w"
+```text
 ^[0-9]{4}-[0-9]{2}-[0-9]{2}$
 ```
 
@@ -398,7 +401,7 @@ These fields are not strictly required for the minimum schema, but are strongly 
 
 ### 3.1 `summary`
 
-```yaml id="quyxuv"
+```yaml
 summary: "Early Ottoman formation, frontier conditions, source distance, legitimacy, and uncertainty."
 ```
 
@@ -415,7 +418,7 @@ Rules:
 
 ### 3.2 `world`
 
-```yaml id="0sjwmp"
+```yaml
 world: "west-asia"
 ```
 
@@ -431,7 +434,7 @@ Rules:
 
 ### 3.3 `region`
 
-```yaml id="t9wo9c"
+```yaml
 region: "anatolia-and-eastern-mediterranean"
 ```
 
@@ -447,7 +450,7 @@ Rules:
 
 ### 3.4 `hub`
 
-```yaml id="bjq9bz"
+```yaml
 hub: "ottoman-polity"
 ```
 
@@ -464,7 +467,7 @@ Rules:
 
 ### 3.5 `period`
 
-```yaml id="sfucbs"
+```yaml
 period: "late-13th-to-early-14th-century"
 ```
 
@@ -481,7 +484,7 @@ Rules:
 
 ### 3.6 `date_start` and `date_end`
 
-```yaml id="t7bbrw"
+```yaml
 date_start: "1299"
 date_end: "1323"
 ```
@@ -497,12 +500,12 @@ Rules:
 
 Examples:
 
-```yaml id="xwnd99"
+```yaml
 date_start: "1522-06"
 date_end: "1522-12"
 ```
 
-```yaml id="h3q7z8"
+```yaml
 date_start: "1402"
 date_end: "1413"
 ```
@@ -511,7 +514,7 @@ date_end: "1413"
 
 ### 3.7 `related`
 
-```yaml id="5lln6j"
+```yaml
 related:
   - "sp_00000011"
   - "sp_00000045"
@@ -530,7 +533,7 @@ Rules:
 
 ### 3.8 `claim_status`
 
-```yaml id="nqybu0"
+```yaml
 claim_status: "mixed"
 ```
 
@@ -538,7 +541,7 @@ General claim-status signal for AI and catalog use.
 
 Initial allowed values:
 
-```text id="15kk6q"
+```text
 stable
 mixed
 contested
@@ -548,7 +551,7 @@ source_limited
 
 Recommended use:
 
-```text id="qjphju"
+```text
 stable
 = main claims are broadly supported
 
@@ -574,7 +577,7 @@ Rules:
 
 ### 3.9 `license`
 
-```yaml id="csuq89"
+```yaml
 license: "CC BY 4.0"
 ```
 
@@ -592,7 +595,7 @@ Rules:
 
 The following fields should generally be generated from file path, build configuration, registry, or public URL rules rather than manually written in every Markdown file.
 
-```text id="iy65wu"
+```text
 html_url
 canonical_markdown_url
 canonical_html_url
@@ -606,7 +609,7 @@ Manual URL fields are easy to break when files move.
 
 The stable source fields should be:
 
-```text id="thdlpn"
+```text
 entry_key
 language
 file path
@@ -622,7 +625,7 @@ Generated catalogs such as `entries.json` may include URLs after build-time reso
 
 ### 5.1 Person entry
 
-```yaml id="zr68xm"
+```yaml
 ---
 entry_key: "sp_00000010"
 title: "Osman I"
@@ -643,7 +646,7 @@ claim_status: "source_limited"
 
 ### 5.2 Event entry
 
-```yaml id="x57yec"
+```yaml
 ---
 entry_key: "sp_00000008"
 title: "Rhodes, 1522"
@@ -666,7 +669,7 @@ claim_status: "mixed"
 
 ### 5.3 Timeline entry
 
-```yaml id="x72mmv"
+```yaml
 ---
 entry_key: "sp_00000045"
 title: "Timeline of the Ottoman Interregnum"
@@ -689,7 +692,7 @@ claim_status: "mixed"
 
 ### 5.4 Historical hub
 
-```yaml id="m9ylfo"
+```yaml
 ---
 entry_key: "sp_00000001"
 title: "The Ottoman Polity"
@@ -710,7 +713,7 @@ claim_status: "mixed"
 
 ### 5.5 Principle page
 
-```yaml id="x3pjd9"
+```yaml
 ---
 entry_key: "sp_00000090"
 title: "SANA Historical Reading Protocol"
@@ -731,10 +734,10 @@ claim_status: "stable"
 
 `entries.json` should be generated from:
 
-```text id="e1xk34"
+```text
 Markdown frontmatter
-+ entry-key registry
-+ file paths
++ registry/v2/entry-registry.csv
++ registry/v2/entry-language-registry.csv
 + public URL rules
 ```
 
@@ -742,7 +745,7 @@ Do not manually maintain `entries.json` as the source of truth.
 
 The Markdown frontmatter remains the article-level source for:
 
-```text id="rh02gk"
+```text
 title
 language
 status
@@ -775,7 +778,7 @@ The former `registry/entry-key-registry.csv` and its `file_en` / `file_ja` colum
 
 Generated URL rules determine:
 
-```text id="whg03o"
+```text
 html_url
 canonical_markdown_url
 language alternates
@@ -788,7 +791,7 @@ sitemap entries
 
 Before publication, check:
 
-```text id="w3h6aw"
+```text
 □ Every public Markdown entry has frontmatter.
 
 □ Every public entry has entry_key, title, language, status,
@@ -796,11 +799,11 @@ Before publication, check:
 
 □ entry_key matches ^sp_[0-9]{8}$.
 
-□ entry_key appears in the entry-key registry.
+□ entry_key appears in registry/v2/entry-registry.csv.
 
-□ EN and JA versions of the same entry use the same entry_key.
+□ All language manifestations of the same entry use the same entry_key.
 
-□ language matches the file’s language root.
+□ language agrees with entry-language-registry.csv and the file’s language root.
 
 □ status uses an allowed value.
 
