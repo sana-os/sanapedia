@@ -1,0 +1,820 @@
+# sanapedia Frontmatter Minimum Schema
+
+## Purpose
+
+This document defines the minimum frontmatter schema for public sanapedia Markdown entries.
+
+The schema exists to support:
+
+* stable entry identification;
+* bilingual mapping;
+* citation;
+* revision tracking;
+* AI and RAG use;
+* public HTML generation;
+* canonical Markdown access;
+* machine-readable catalogs;
+* editorial validation.
+
+Frontmatter should not replace historical analysis.
+
+Historical claims, evidence, interpretation, uncertainty, and hypotheses belong in the article body.
+
+---
+
+## 1. Core rule
+
+Every public sanapedia entry must include a frontmatter block.
+
+```yaml id="qs56vb"
+---
+entry_key: "sp_00000010"
+title: "Osman I"
+language: "en"
+status: "active"
+entity_type: "person"
+content_type: "historical_entry"
+revision: "0.2"
+updated: "2026-07-05"
+---
+```
+
+The `entry_key` is the stable identity of the entry.
+
+It must not change when the title, preferred name, slug, URL, file path, language version, or article wording changes.
+
+---
+
+## 2. Required fields
+
+### 2.1 `entry_key`
+
+```yaml id="q6im7j"
+entry_key: "sp_00000010"
+```
+
+Stable sanapedia entry identifier.
+
+Rules:
+
+* required;
+* quoted string;
+* format: `sp_00000000`;
+* must match the entry-key registry;
+* must never be reused;
+* must not encode type, period, language, geography, status, or hierarchy;
+* corresponding Japanese and English versions of the same research entry share the same `entry_key`.
+
+Recommended validation pattern:
+
+```text id="rsjtr5"
+^sp_[0-9]{8}$
+```
+
+---
+
+### 2.2 `title`
+
+```yaml id="eatost"
+title: "Osman I"
+```
+
+Display title for the specific language version.
+
+Rules:
+
+* required;
+* quoted string;
+* language-specific;
+* may change over time;
+* does not determine entry identity.
+
+Examples:
+
+```yaml id="gsnu5r"
+title: "Osman I"
+```
+
+```yaml id="6oi5ih"
+title: "オスマン1世"
+```
+
+---
+
+### 2.3 `language`
+
+```yaml id="22tjm0"
+language: "en"
+```
+
+Language of the file.
+
+Allowed initial values:
+
+```text id="nrp0a4"
+en
+ja
+```
+
+Rules:
+
+* required;
+* lowercase;
+* quoted string;
+* must match the file’s language root.
+
+Examples:
+
+```yaml id="6j4m27"
+language: "en"
+```
+
+```yaml id="k39hdh"
+language: "ja"
+```
+
+---
+
+### 2.4 `status`
+
+```yaml id="nv5e41"
+status: "active"
+```
+
+Editorial/publication status of the entry.
+
+Required.
+
+Initial allowed values:
+
+```text id="w12mj2"
+draft
+active
+provisional
+superseded
+redirected
+withdrawn
+```
+
+Recommended use:
+
+```text id="1ygnzz"
+draft
+= not intended for public use
+
+active
+= current public version
+
+provisional
+= public but incomplete or under active review
+
+superseded
+= replaced by another entry but preserved for history
+
+redirected
+= entry_key or page retained as a pointer to another entry
+
+withdrawn
+= removed from active use but not deleted from the registry
+```
+
+Rules:
+
+* do not delete withdrawn, redirected, or superseded `entry_key` values from the registry;
+* status changes should be reflected in generated catalogs;
+* public pages should visibly indicate non-active status where relevant.
+
+---
+
+### 2.5 `entity_type`
+
+```yaml id="oo2758"
+entity_type: "person"
+```
+
+Historical or structural entity represented by the entry.
+
+Required.
+
+Initial allowed values:
+
+```text id="ov3k6m"
+person
+event
+timeline
+historical_hub
+phenomenon
+source
+column
+principle
+policy
+index
+```
+
+Recommended use:
+
+```text id="wze85q"
+person
+= historical person or named individual
+
+event
+= bounded historical event or episode
+
+timeline
+= chronological structure
+
+historical_hub
+= navigational and contextual historical hub
+
+phenomenon
+= recurring structure, pattern, process, or social phenomenon
+
+source
+= source note, source guide, or source-focused entry
+
+column
+= interpretive or explanatory column
+
+principle
+= methodological or conceptual page
+
+policy
+= editorial, legal, reuse, or citation policy
+
+index
+= language root, section root, or generated/manual index page
+```
+
+Rules:
+
+* `entity_type` may change if editorial understanding changes;
+* `entry_key` must not change when `entity_type` changes;
+* do not encode `entity_type` inside `entry_key`.
+
+---
+
+### 2.6 `content_type`
+
+```yaml id="vlmthj"
+content_type: "historical_entry"
+```
+
+Function of the page within sanapedia.
+
+Required.
+
+Initial allowed values:
+
+```text id="9zx4xd"
+historical_entry
+historical_hub
+timeline
+policy
+principle
+index
+source_note
+column
+```
+
+Recommended use:
+
+```text id="7us3od"
+historical_entry
+= ordinary historical article
+
+historical_hub
+= hub page connecting entries and contexts
+
+timeline
+= chronological page
+
+policy
+= public policy page such as LICENSE, AI-USE, CITATION, editorial policy
+
+principle
+= SANA or methodological page
+
+index
+= section or language index
+
+source_note
+= source-focused note or guide
+
+column
+= essay-like explanation or interpretive column
+```
+
+Rules:
+
+* `entity_type` describes what the entry is about;
+* `content_type` describes how the page functions;
+* for many pages these may overlap, but they are not identical.
+
+Example:
+
+```yaml id="j1ew3l"
+entity_type: "historical_hub"
+content_type: "historical_hub"
+```
+
+```yaml id="m4yois"
+entity_type: "event"
+content_type: "historical_entry"
+```
+
+---
+
+### 2.7 `revision`
+
+```yaml id="wsk9vu"
+revision: "0.2"
+```
+
+Visible revision number of the language version.
+
+Required.
+
+Rules:
+
+* quoted string;
+* may differ between language versions;
+* should increase when substantive content changes;
+* does not determine entry identity.
+
+Recommended initial pattern:
+
+```text id="g1wslk"
+0.1
+0.2
+0.3
+1.0
+1.1
+```
+
+Suggested meaning:
+
+```text id="ghtnhy"
+0.x
+= early public or pre-stable research version
+
+1.0
+= first stable public version
+
+1.x
+= revised stable version
+```
+
+---
+
+### 2.8 `updated`
+
+```yaml id="vqpx6e"
+updated: "2026-07-05"
+```
+
+Date when this language version was last materially updated.
+
+Required.
+
+Rules:
+
+* quoted string;
+* ISO date format;
+* format: `YYYY-MM-DD`;
+* may differ between language versions;
+* update when claims, source notes, interpretation, structure, title, or status materially change.
+
+Recommended validation pattern:
+
+```text id="5rap6w"
+^[0-9]{4}-[0-9]{2}-[0-9]{2}$
+```
+
+---
+
+## 3. Recommended fields
+
+These fields are not strictly required for the minimum schema, but are strongly recommended for historical entries and hubs.
+
+### 3.1 `summary`
+
+```yaml id="quyxuv"
+summary: "Early Ottoman formation, frontier conditions, source distance, legitimacy, and uncertainty."
+```
+
+Short description used for indexes, cards, search results, AI catalogs, and previews.
+
+Rules:
+
+* quoted string;
+* language-specific;
+* should not overstate certainty;
+* should be short enough for index display.
+
+---
+
+### 3.2 `world`
+
+```yaml id="0sjwmp"
+world: "west-asia"
+```
+
+Primary editorial world placement.
+
+Rules:
+
+* quoted string;
+* lowercase slug;
+* describes editorial placement, not exclusive historical ownership.
+
+---
+
+### 3.3 `region`
+
+```yaml id="t9wo9c"
+region: "anatolia-and-eastern-mediterranean"
+```
+
+Primary editorial regional placement.
+
+Rules:
+
+* quoted string;
+* lowercase slug;
+* describes editorial placement, not exclusive historical ownership.
+
+---
+
+### 3.4 `hub`
+
+```yaml id="bjq9bz"
+hub: "ottoman-polity"
+```
+
+Primary editorial hub placement.
+
+Rules:
+
+* quoted string;
+* lowercase slug;
+* describes the current editorial shelf;
+* does not prevent the entry from being linked from other hubs.
+
+---
+
+### 3.5 `period`
+
+```yaml id="sfucbs"
+period: "late-13th-to-early-14th-century"
+```
+
+Broad historical period label.
+
+Rules:
+
+* quoted string;
+* may be approximate;
+* should not replace body discussion of chronology;
+* use `date_start` and `date_end` when chronological filtering is needed.
+
+---
+
+### 3.6 `date_start` and `date_end`
+
+```yaml id="t7bbrw"
+date_start: "1299"
+date_end: "1323"
+```
+
+Approximate chronological range for filtering and timelines.
+
+Rules:
+
+* quoted strings;
+* may be year-only or full ISO dates;
+* use cautiously when chronology is uncertain;
+* body text should explain uncertainty.
+
+Examples:
+
+```yaml id="xwnd99"
+date_start: "1522-06"
+date_end: "1522-12"
+```
+
+```yaml id="h3q7z8"
+date_start: "1402"
+date_end: "1413"
+```
+
+---
+
+### 3.7 `related`
+
+```yaml id="5lln6j"
+related:
+  - "sp_00000011"
+  - "sp_00000045"
+```
+
+Related entry keys.
+
+Rules:
+
+* list of quoted `entry_key` values;
+* optional in initial release;
+* should not replace future navigation registry;
+* use only for strong, manually reviewed relations.
+
+---
+
+### 3.8 `claim_status`
+
+```yaml id="nqybu0"
+claim_status: "mixed"
+```
+
+General claim-status signal for AI and catalog use.
+
+Initial allowed values:
+
+```text id="15kk6q"
+stable
+mixed
+contested
+hypothesis_heavy
+source_limited
+```
+
+Recommended use:
+
+```text id="qjphju"
+stable
+= main claims are broadly supported
+
+mixed
+= contains both stable claims and interpretive or uncertain sections
+
+contested
+= substantial scholarly disagreement or conflicting records
+
+hypothesis_heavy
+= includes major reversible hypotheses
+
+source_limited
+= source base is sparse, late, fragmentary, or indirect
+```
+
+Rules:
+
+* this is a guide signal, not a substitute for the article body;
+* AI systems should still inspect the relevant passages.
+
+---
+
+### 3.9 `license`
+
+```yaml id="csuq89"
+license: "CC BY 4.0"
+```
+
+License for sanapedia original content on the page.
+
+Rules:
+
+* quoted string;
+* default may be inherited from root `LICENSE.md`;
+* include when a page has special licensing conditions or third-party material notes.
+
+---
+
+## 4. Fields generated at build time
+
+The following fields should generally be generated from file path, build configuration, registry, or public URL rules rather than manually written in every Markdown file.
+
+```text id="iy65wu"
+html_url
+canonical_markdown_url
+canonical_html_url
+language_alternates
+sitemap_url
+```
+
+Reason:
+
+Manual URL fields are easy to break when files move.
+
+The stable source fields should be:
+
+```text id="thdlpn"
+entry_key
+language
+file path
+registry mapping
+frontmatter metadata
+```
+
+Generated catalogs such as `entries.json` may include URLs after build-time resolution.
+
+---
+
+## 5. Minimum examples
+
+### 5.1 Person entry
+
+```yaml id="zr68xm"
+---
+entry_key: "sp_00000010"
+title: "Osman I"
+language: "en"
+status: "active"
+entity_type: "person"
+content_type: "historical_entry"
+revision: "0.2"
+updated: "2026-07-05"
+summary: "Early Ottoman formation, frontier conditions, source distance, legitimacy, and uncertainty."
+world: "west-asia"
+region: "anatolia-and-eastern-mediterranean"
+hub: "ottoman-polity"
+period: "late-13th-to-early-14th-century"
+claim_status: "source_limited"
+---
+```
+
+### 5.2 Event entry
+
+```yaml id="x57yec"
+---
+entry_key: "sp_00000008"
+title: "Rhodes, 1522"
+language: "en"
+status: "active"
+entity_type: "event"
+content_type: "historical_entry"
+revision: "0.2"
+updated: "2026-07-05"
+summary: "Siege, maritime logistics, island society, garrisoning, waqf, and eastern Mediterranean government."
+world: "west-asia"
+region: "anatolia-and-eastern-mediterranean"
+hub: "ottoman-polity"
+period: "early-16th-century"
+date_start: "1522"
+date_end: "1522"
+claim_status: "mixed"
+---
+```
+
+### 5.3 Timeline entry
+
+```yaml id="x72mmv"
+---
+entry_key: "sp_00000045"
+title: "Timeline of the Ottoman Interregnum"
+language: "en"
+status: "active"
+entity_type: "timeline"
+content_type: "timeline"
+revision: "0.1"
+updated: "2026-07-05"
+summary: "Dynastic fragmentation, regional political centers, towns, military actors, revenue, diplomacy, and legitimacy after 1402."
+world: "west-asia"
+region: "anatolia-and-eastern-mediterranean"
+hub: "ottoman-polity"
+period: "early-15th-century"
+date_start: "1402"
+date_end: "1413"
+claim_status: "mixed"
+---
+```
+
+### 5.4 Historical hub
+
+```yaml id="m9ylfo"
+---
+entry_key: "sp_00000001"
+title: "The Ottoman Polity"
+language: "en"
+status: "active"
+entity_type: "historical_hub"
+content_type: "historical_hub"
+revision: "0.1"
+updated: "2026-07-05"
+summary: "Hub for people, events, timelines, institutions, and historical context relating to the Ottoman polity."
+world: "west-asia"
+region: "anatolia-and-eastern-mediterranean"
+hub: "ottoman-polity"
+period: "late-13th-to-early-20th-century"
+claim_status: "mixed"
+---
+```
+
+### 5.5 Principle page
+
+```yaml id="x3pjd9"
+---
+entry_key: "sp_00000090"
+title: "SANA Historical Reading Protocol"
+language: "en"
+status: "active"
+entity_type: "principle"
+content_type: "principle"
+revision: "1.0"
+updated: "2026-07-05"
+summary: "Reading protocol for distinguishing Fact, Perception, Record, evidence, interpretation, hypothesis, and uncertainty."
+claim_status: "stable"
+---
+```
+
+---
+
+## 6. Public catalog mapping
+
+`entries.json` should be generated from:
+
+```text id="e1xk34"
+Markdown frontmatter
++ entry-key registry
++ file paths
++ public URL rules
+```
+
+Do not manually maintain `entries.json` as the source of truth.
+
+The Markdown frontmatter remains the article-level source for:
+
+```text id="rh02gk"
+title
+language
+status
+entity_type
+content_type
+revision
+updated
+summary
+period
+claim_status
+```
+
+Registry v2 remains the registry-level source for:
+
+```text
+registry/v2/entry-registry.csv
+    entry_key existence
+    identity lifecycle status
+    identity-level notes
+
+registry/v2/entry-language-registry.csv
+    language manifestation existence
+    entry_key + language mapping
+    repository file mapping
+```
+
+There is no fixed EN/JA language requirement. Language availability is derived from `entry-language-registry.csv`.
+
+The former `registry/entry-key-registry.csv` and its `file_en` / `file_ja` columns are retained as Registry v1 legacy structure only.
+
+Generated URL rules determine:
+
+```text id="whg03o"
+html_url
+canonical_markdown_url
+language alternates
+sitemap entries
+```
+
+---
+
+## 7. Validation checklist
+
+Before publication, check:
+
+```text id="w3h6aw"
+□ Every public Markdown entry has frontmatter.
+
+□ Every public entry has entry_key, title, language, status,
+  entity_type, content_type, revision, and updated.
+
+□ entry_key matches ^sp_[0-9]{8}$.
+
+□ entry_key appears in the entry-key registry.
+
+□ EN and JA versions of the same entry use the same entry_key.
+
+□ language matches the file’s language root.
+
+□ status uses an allowed value.
+
+□ entity_type uses an allowed value.
+
+□ content_type uses an allowed value.
+
+□ updated uses YYYY-MM-DD format.
+
+□ html_url and canonical_markdown_url are not manually duplicated
+  unless there is a special reason.
+
+□ entries.json is generated, not manually edited.
+
+□ hypothesis-heavy or source-limited pages are marked carefully enough
+  for AI and catalog use.
+```

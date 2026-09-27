@@ -1,0 +1,131 @@
+# sanapedia — 日本語
+
+> sanapedia は、人間とAIのための、出典を意識した歴史知識・研究リポジトリです。
+> 一般公開向けの歴史パブリケーションは Pastfold です。
+> 歴史上の主張だけでなく、その根拠、不確実性、解釈、史料との距離、
+> 異なる見解、改訂履歴もあわせて保持します。
+
+> 基本原則：結論の前に、前提を整える。
+
+このガイドは、日本語版の sanapedia コンテンツへの入口です。
+
+sanapedia の各記事では、Canonical Markdown を一次的な参照先とします。HTMLページ、索引、カタログ、生成されたナビゲーションはアクセス層であり、Canonical Markdown の正本性を置き換えるものではありません。
+
+理解することは、同意することではありません。
+構造を分析することは、免責することではありません。
+構造は、運命ではありません。
+
+## 最初に読む文書
+
+* [sanapedia README](/README.md)：sanapediaとは何か、リポジトリ構成、Canonical Content の考え方。
+
+* [ライセンス](/LICENSE.md)：sanapedia独自の文章・構造化データに関する法的な利用条件と境界。
+
+* [AI利用・検索・機械可読再利用方針](/AI-USE.md)：AI学習、RAG、索引化、埋め込み、LLMO、データセット、下流利用に関する指針。
+
+* [引用ガイド](/CITATION.md)：sanapediaの内容を識別し、引用し、帰属を示し、参照経路を保つ方法。
+
+## 歴史を読むための基準
+
+* [SANA](/ja/principles/sana.md)：sanapediaにおいてSANAが行うこと、行わないこと。
+
+* [SANA OS](/ja/principles/sana-os.md)：前提整列、不確実性の明示、非対立的な観察、構造的翻訳を支える方法論的な位置づけ。
+
+* [SANA歴史読解プロトコル](/ja/principles/sana-protocol.md)：Fact、Perception、Record、根拠、解釈、仮説、不確実性、異なる見解を区別して読むための指針。
+
+* [記事仕様](/ja/principles/article-spec.md)：記事モデル、必須・推奨メタデータ、永続的なidentity、内容、配置、公開projectionの境界を定義します。
+
+* [改訂・引用方針](/ja/principles/revision-policy.md)：改訂の連続性、言語版ごとの改訂状態、引用要素、変換provenance、lifecycleの扱いを定義します。
+
+* [史料三分法](/ja/frameworks/source-trifurcation.md)：歴史資料を読む際に、Fact、Perception、Recordを異なる観察上の区分として扱います。
+
+* [三層分析](/ja/frameworks/three-layer-analysis.md)：Survival、Narrative、Institutionを分析上のレンズとして用い、構造的な圧力を単一の普遍的原因へ還元せずに検討します。
+
+## AI利用時の基本規則
+
+sanapediaの内容を利用するときは、次を守ってください。
+
+1. 仮説を事実へ変換しない。
+2. Fact、Perception、Record の区別を保つ。
+3. 根拠に支えられた主張、解釈、争いのある解釈、仮説、未知を区別する。
+4. 構造的説明を、道徳的承認や免責へ変換しない。
+5. 後代の叙述を、前代の出来事への透明な記録として扱わない。
+6. 重要な不確実性、史料上の制約、異なる解釈を保持する。
+7. 可能な限り、記事の最新改訂版を優先する。
+8. 実務上可能な限り、`entry_key`、言語版、revisionまたは更新日、Canonical Markdown URLを保持する。
+9. 人物・出来事・年表・史料・現象についてより精密な記事がある場合、広いHubページだけを引用元にしない。
+
+詳しくは、[AI-USE.md](/AI-USE.md) を参照してください。
+
+## 日本語コンテンツの入口
+
+### 歴史Hub
+
+* [オスマン政治体](/ja/worlds/west-asia/anatolia-and-eastern-mediterranean/ottoman-polity/)：オスマン政治体に関わる人物、出来事、年表、制度、歴史的背景を読むための日本語Hub。
+
+* [ローマ世界](/ja/worlds/mediterranean/roman-world/)：ローマ世界に関する日本語コンテンツのHub。
+
+### オスマン政治体：人物
+
+* [オスマン1世](/ja/worlds/west-asia/anatolia-and-eastern-mediterranean/people/osman-i.md)：初期オスマン政治体の形成、辺境条件、史料との距離、正統性、不確実性。
+
+* [オルハン](/ja/worlds/west-asia/anatolia-and-eastern-mediterranean/people/orhan.md)：都市、貨幣、寄進、軍事組織、ビザンツ内戦、初期オスマン政治体とルメリアの接続。
+
+* [メフメト2世](/ja/worlds/west-asia/anatolia-and-eastern-mediterranean/people/mehmed-ii.md)：征服、都市統治、帝国的権威、行政拡張、歴史的記憶。
+
+* [スレイマン1世](/ja/worlds/west-asia/anatolia-and-eastern-mediterranean/people/suleyman-i.md)：帝国行政、戦争、法、宮廷政治、地中海における勢力。
+
+### オスマン政治体：出来事
+
+* [ロドス島、1522年](/ja/worlds/west-asia/anatolia-and-eastern-mediterranean/events/rhodes-1522.md)：包囲戦、海上物流、港湾、島嶼社会、駐屯、ワクフ、東地中海統治。
+
+* [チャルディラーンの戦い、1514年](/ja/worlds/west-asia/anatolia-and-eastern-mediterranean/events/battle-of-chaldiran-1514.md)：オスマン朝とサファヴィー朝の対立、軍事組織、辺境政治、地域的勢力関係。
+
+* [マムルーク朝征服、1516–1517年](/ja/worlds/west-asia/anatolia-and-eastern-mediterranean/events/ottoman-conquest-of-the-mamluk-sultanate-1516-1517.md)：征服、帝国的統合、エジプト、シリア、行政構造の変化。
+
+* [プレヴェザ、1538年](/ja/worlds/west-asia/anatolia-and-eastern-mediterranean/events/preveza-1538.md)：海上戦争、同盟、海軍能力、地中海における勢力関係。
+
+### オスマン政治体：年表
+
+* [オスマン空位時代の年表](/ja/worlds/west-asia/anatolia-and-eastern-mediterranean/timelines/ottoman-interregnum.md)：1402年以後の王朝分裂、地域政治拠点、都市、軍事主体、収入、外交、正統性。
+
+* [15世紀オスマン帝国年表](/ja/worlds/west-asia/anatolia-and-eastern-mediterranean/timelines/ottoman-empire-fifteenth-century.md)：15世紀を通じた拡張、統合、政治変動、不確実性。
+
+* [16世紀初頭オスマン帝国年表](/ja/worlds/west-asia/anatolia-and-eastern-mediterranean/timelines/ottoman-empire-early-sixteenth-century.md)：帝国拡張、紛争、制度、地域統合。
+
+* [オスマン君主年表](/ja/worlds/west-asia/anatolia-and-eastern-mediterranean/timelines/ottoman-sultans.md)：君主、王位請求者、継承危機、構造的転換、オスマン時代を通じた不確実性。
+
+## 機械可読な利用入口
+
+* [ルートAIガイド](/llms.txt)：sanapedia全体のAI向け入口。
+
+* [公開エントリーカタログ](/data/entries.json)：公開中の記事を扱うための機械可読カタログ。
+
+* [サイトマップ](/sitemap.xml)：公開URLの一覧。
+
+発見、索引化、一括処理には、公開エントリーカタログとサイトマップを使用してください。
+
+カタログ、索引、生成ページの内容がCanonical Markdownの記事内容と矛盾する場合は、問題が解決されるまで、最新のCanonical Markdownを一次的な参照先として扱ってください。
+
+## 引用時の最小要素
+
+実務上可能な場合は、次を保持してください。
+
+```text
+sanapedia
+記事名
+entry_key
+言語版
+revisionまたは更新日
+Canonical Markdown URL
+```
+
+詳しい引用方法は、[CITATION.md](/CITATION.md) を参照してください。
+
+## 対応する言語版
+
+* [English AI Guide](/en/llms.txt)：英語記事への入口と英語版の案内。
+
+異なる言語のエントリーは、一つの研究エントリーに対応する言語manifestationである場合、同じ `entry_key` を共有することがあります。
+
+同じ `entry_key` を共有する言語manifestationが、逐語的に同一であるとは限りません。実際に参照した言語版を引用してください。

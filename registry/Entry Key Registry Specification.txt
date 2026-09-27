@@ -1,0 +1,390 @@
+# Entry Key Registry Specification
+
+> **Status: LEGACY / SUPERSEDED**
+>
+> This document specifies Registry v1 and is retained as a historical
+> migration and provenance record.
+>
+> Current registry authority:
+>
+> ```text
+> registry/v2/entry-registry.csv
+> registry/v2/entry-language-registry.csv
+> registry/v2/Registry v2 Specification.md
+> ```
+>
+> Statements below describing Registry v1 as "the registry" or
+> "source of truth" represent historical v1 semantics.
+
+## Purpose
+
+`entry-key-registry.csv` is the internal registry for stable sanapedia entry identifiers.
+
+It records the relationship between:
+
+* a permanent `entry_key`;
+* the editorial status of the entry group;
+* the English Markdown file path;
+* the Japanese Markdown file path;
+* editorial notes about mapping, redirects, withdrawals, or irregular cases.
+
+The registry is not the public article catalog.
+
+It is an editorial control file used to validate Markdown entries, maintain bilingual mapping, prevent identifier reuse, and generate public data such as `entries.json`.
+
+---
+
+## File location
+
+```text
+registry/entry-key-registry.csv
+```
+
+---
+
+## Core rule
+
+One row represents one sanapedia research entry.
+
+Japanese and English versions of the same research entry share the same `entry_key` and appear in the same row.
+
+```csv
+entry_key,status,file_en,file_ja,note
+sp_00000010,active,EN/worlds/west-asia/anatolia-and-eastern-mediterranean/ottoman-polity/people/osman-i.md,JA/worlds/west-asia/anatolia-and-eastern-mediterranean/ottoman-polity/people/osman-i.md,
+```
+
+---
+
+## Columns
+
+### `entry_key`
+
+Permanent sanapedia identifier.
+
+Example:
+
+```text
+sp_00000010
+```
+
+Rules:
+
+* required;
+* must be unique;
+* must never be reused;
+* must match the Markdown frontmatter;
+* must use the format `sp_00000000`;
+* must not encode language, type, region, period, hierarchy, or status.
+
+Validation pattern:
+
+```text
+^sp_[0-9]{8}$
+```
+
+---
+
+### `status`
+
+Registry-level status of the entry group.
+
+Initial allowed values:
+
+```text
+active
+draft
+provisional
+superseded
+redirected
+withdrawn
+reserved
+```
+
+Recommended meaning:
+
+```text
+active
+= current public entry
+
+draft
+= not yet public
+
+provisional
+= public but incomplete or under review
+
+superseded
+= replaced by another entry but preserved for history
+
+redirected
+= retained as a pointer to another entry
+
+withdrawn
+= removed from active use but not deleted
+
+reserved
+= entry_key reserved but not yet assigned to public content
+```
+
+Rules:
+
+* required;
+* lowercase;
+* should normally match the public status of the corresponding Markdown entry;
+* may be used to preserve non-public, retired, redirected, or withdrawn identifiers.
+
+---
+
+### `file_en`
+
+Physical path to the English Canonical Markdown source.
+
+Example:
+
+```text
+EN/worlds/west-asia/anatolia-and-eastern-mediterranean/ottoman-polity/people/osman-i.md
+```
+
+Rules:
+
+* use `/` as the path separator;
+* omit the repository root name;
+* leave blank if no English version exists yet;
+* must resolve to an actual Markdown file when status is `active` and an English version exists;
+* the target Markdown file must contain the same `entry_key`.
+
+---
+
+### `file_ja`
+
+Physical path to the Japanese Canonical Markdown source.
+
+Example:
+
+```text
+JA/worlds/west-asia/anatolia-and-eastern-mediterranean/ottoman-polity/people/osman-i.md
+```
+
+Rules:
+
+* use `/` as the path separator;
+* omit the repository root name;
+* leave blank if no Japanese version exists yet;
+* must resolve to an actual Markdown file when status is `active` and a Japanese version exists;
+* the target Markdown file must contain the same `entry_key`.
+
+---
+
+### `note`
+
+Editorial note.
+
+Use this field only for mapping and lifecycle notes.
+
+Examples:
+
+```text
+superseded_by=sp_00000084
+redirects_to=sp_00000020
+reserved for future source note
+JA version pending
+EN version pending
+```
+
+Rules:
+
+* optional;
+* may be blank;
+* should not contain article titles, revision numbers, public URLs, or historical analysis;
+* should remain short and machine-tolerable where possible.
+
+---
+
+## Do not store these in the registry
+
+The registry should remain narrow.
+
+Do not add these fields to `entry-key-registry.csv` unless there is a later structural reason.
+
+```text
+title
+summary
+entity_type
+content_type
+revision
+updated
+world
+region
+hub
+period
+claim_status
+html_url
+canonical_markdown_url
+related entries
+source notes
+```
+
+These belong to Markdown frontmatter, generated public catalogs, or future navigation registries.
+
+---
+
+## Source of truth
+
+The registry is the source of truth for:
+
+```text
+entry_key existence
+entry_key reuse prevention
+EN/JA file mapping
+entry lifecycle preservation
+redirected, withdrawn, reserved, and superseded identifiers
+```
+
+Markdown frontmatter is the source of truth for:
+
+```text
+title
+language
+status
+entity_type
+content_type
+revision
+updated
+summary
+period
+claim_status
+historical metadata
+```
+
+Generated public data such as `entries.json` is the source of truth for nothing.
+
+It is a derived access layer.
+
+---
+
+## Validation rules
+
+Before publication, check:
+
+```text
+□ Every entry_key matches ^sp_[0-9]{8}$.
+
+□ No entry_key appears more than once.
+
+□ No retired, withdrawn, redirected, superseded, or reserved entry_key is reused.
+
+□ Every active row has at least one file path.
+
+□ file_en and file_ja use / rather than \.
+
+□ file_en begins with EN/ when present.
+
+□ file_ja begins with JA/ when present.
+
+□ Each file path resolves to an existing Markdown file when applicable.
+
+□ Each mapped Markdown file contains the same entry_key as the registry row.
+
+□ English files have language: "en".
+
+□ Japanese files have language: "ja".
+
+□ Public entries have status values compatible with the registry status.
+
+□ entries.json is generated from registry + frontmatter + file paths + public URL rules.
+```
+
+---
+
+## Registry lifecycle rules
+
+### New entry
+
+When creating a new research entry:
+
+1. assign the next unused `entry_key`;
+2. add a new row to the registry;
+3. create at least one language version;
+4. put the same `entry_key` in the Markdown frontmatter;
+5. validate the registry before publication.
+
+### New translation
+
+When adding a translation of an existing entry:
+
+1. keep the same `entry_key`;
+2. add the new language file path to the existing row;
+3. ensure the translated Markdown frontmatter uses the same `entry_key`;
+4. set the correct `language` value in frontmatter.
+
+### Rename or move
+
+When a file is renamed or moved:
+
+1. keep the same `entry_key`;
+2. update only the file path in the registry;
+3. do not create a new row;
+4. regenerate public catalogs.
+
+### Supersede
+
+When one entry replaces another:
+
+1. keep the old row;
+2. set old status to `superseded`;
+3. add `superseded_by=sp_00000000` to `note`;
+4. keep or add the replacement row separately;
+5. do not reuse the old `entry_key`.
+
+### Redirect
+
+When an entry becomes a redirect:
+
+1. keep the row;
+2. set status to `redirected`;
+3. add `redirects_to=sp_00000000` to `note`;
+4. do not reuse the old `entry_key`.
+
+### Withdraw
+
+When an entry is withdrawn:
+
+1. keep the row;
+2. set status to `withdrawn`;
+3. explain briefly in `note` if needed;
+4. do not delete the row;
+5. do not reuse the `entry_key`.
+
+---
+
+## Minimal CSV template
+
+```csv
+entry_key,status,file_en,file_ja,note
+sp_00000001,active,EN/worlds/west-asia/anatolia-and-eastern-mediterranean/ottoman-polity/index.md,JA/worlds/west-asia/anatolia-and-eastern-mediterranean/ottoman-polity/index.md,
+sp_00000002,active,EN/worlds/west-asia/anatolia-and-eastern-mediterranean/ottoman-polity/events/battle-of-chaldiran-1514.md,JA/worlds/west-asia/anatolia-and-eastern-mediterranean/ottoman-polity/events/battle-of-chaldiran-1514.md,
+sp_00000003,active,EN/worlds/west-asia/anatolia-and-eastern-mediterranean/ottoman-polity/events/battle-of-mohacs-1526.md,JA/worlds/west-asia/anatolia-and-eastern-mediterranean/ottoman-polity/events/battle-of-mohacs-1526.md,
+sp_00000004,active,EN/worlds/west-asia/anatolia-and-eastern-mediterranean/ottoman-polity/events/belgrade-1521.md,JA/worlds/west-asia/anatolia-and-eastern-mediterranean/ottoman-polity/events/belgrade-1521.md,
+```
+
+---
+
+## Recommended encoding
+
+Use:
+
+```text
+UTF-8
+comma-separated CSV
+header row required
+LF line endings preferred
+```
+
+Avoid:
+
+```text
+Windows backslash paths
+duplicate entry_key values
+manual public URLs
+article titles in registry
+historical notes in registry
+```

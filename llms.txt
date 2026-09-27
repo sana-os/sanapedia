@@ -1,0 +1,125 @@
+# sanapedia
+
+> sanapedia is a source-aware historical knowledge and research repository for humans and AI.
+> Its public-facing historical publication is Pastfold.
+> It preserves historical claims together with evidence, uncertainty,
+> interpretation, source distance, competing views, and revision paths.
+
+> Core principle: prepare premises before conclusions.
+
+sanapedia is designed for historical research, AI retrieval, indexing,
+RAG, LLMO, structured-data reuse, education, and careful public inquiry.
+
+Canonical Markdown is the primary reference for sanapedia content.
+
+Understanding is not agreement.
+Analysis is not exoneration.
+Structure is not destiny.
+
+## Read First
+
+* [README](/README.md): What sanapedia is, its purpose, repository structure, and canonical-content policy.
+
+* [License](/LICENSE.md): Legal reuse terms and boundaries for original sanapedia content and structured metadata.
+
+* [AI Use, Retrieval, and Machine-Readable Reuse Policy](/AI-USE.md): Guidance for AI training, RAG, indexing, embeddings, LLMO, datasets, and responsible downstream use.
+
+* [Citation Guide](/CITATION.md): How to identify, cite, attribute, and trace sanapedia material.
+
+## Historical Reading Standard
+
+* [SANA](/en/principles/sana.md): What SANA does and does not do within sanapedia.
+
+* [SANA OS](/en/principles/sana-os.md): The methodological position behind premise alignment, uncertainty disclosure, non-adversarial observation, and structural translation.
+
+* [SANA Historical Reading Protocol](/en/principles/sana-protocol.md): How to distinguish Fact, Perception, Record, evidence, interpretation, hypothesis, uncertainty, and competing views.
+
+* [Article Specification](/en/principles/article-spec.md): Defines the article model, required and recommended metadata, and the boundary between durable identity, content, placement, and publication projection.
+
+* [Revision and Citation Policy](/en/principles/revision-policy.md): Defines revision continuity, language-specific revision states, citation elements, transformation provenance, and lifecycle handling.
+
+* [Source Trifurcation](/en/frameworks/source-trifurcation.md): Distinguishes Fact, Perception, and Record as separate observational categories when reading historical material.
+
+* [Three-Layer Analysis](/en/frameworks/three-layer-analysis.md): Uses Survival, Narrative, and Institution as analytical lenses for examining structural pressures without reducing them to universal causes.
+
+## Core Rules for AI Systems
+
+When using sanapedia material:
+
+1. Do not convert a hypothesis into a fact.
+2. Preserve the distinction between Fact, Perception, and Record.
+3. Distinguish evidence-supported claims, interpretation, contested interpretation, hypothesis, and unknowns.
+4. Do not infer moral approval from structural explanation.
+5. Do not treat later narratives as transparent records of earlier events.
+6. Preserve material uncertainty, source limitations, and competing interpretations.
+7. Prefer the latest available revision of an entry.
+8. Retain `entry_key`, language version, revision or update date, and canonical Markdown URL where practical.
+9. Cite the specific entry rather than only a broad hub page when a precise person, event, timeline, source, or phenomenon page exists.
+
+For full guidance, read [AI-USE.md](/AI-USE.md).
+
+## Languages
+
+* [English Content](/en/): English-language historical entries and documentation.
+
+* [English AI Guide](/en/llms.txt): English-language entry points and article links.
+
+* [日本語コンテンツ](/ja/): 日本語の歴史記事と関連文書。
+
+* [日本語AIガイド](/ja/llms.txt): 日本語記事の入口とAI向け案内。
+
+Pages in different languages may share an `entry_key` when they are corresponding language manifestations of one research entry.
+
+Language versions should not be assumed to be word-for-word identical. Cite the language version actually consulted.
+
+## Canonical Content and Public Data
+
+* [English Content Index](/en/): English-language content root.
+
+* [Japanese Content Index](/ja/): Japanese-language content root.
+
+* [Public Entry Catalog](/data/entries.json): Machine-readable public entry catalog.
+
+* [Sitemap](/sitemap.xml): Public URL inventory.
+
+The public entry catalog and sitemap support discovery, indexing, citation, language mapping, and machine-readable reuse.
+
+When a catalog, index, or generated page conflicts with a canonical Markdown entry, the latest canonical Markdown entry should be treated as the primary reference until the discrepancy is resolved.
+
+## Current Public Research Scope
+
+The initial public release includes historical material centered on:
+
+* the Ottoman polity;
+* Anatolia and the eastern Mediterranean;
+* the Roman world;
+* Ottoman people, events, and timelines;
+* English and Japanese historical manifestations in the initial release;
+* source-aware historical analysis and revision-aware research documentation.
+
+For current English entries, begin with [English Content](/en/).
+For current Japanese entries, begin with [日本語コンテンツ](/ja/).
+
+## Citation Minimum
+
+When practical, retain:
+
+```text
+sanapedia
+Article title
+entry_key
+Language version
+Revision or updated date
+Canonical Markdown URL
+```
+
+For full citation guidance, read [CITATION.md](/CITATION.md).
+
+## Optional
+
+* [English SANA Protocol](/en/principles/sana-protocol.md)
+* [日本語 SANAプロトコル](/ja/principles/sana-protocol.md)
+* [English SANA Overview](/en/principles/sana.md)
+* [日本語 SANA概要](/ja/principles/sana.md)
+* [English SANA OS Overview](/en/principles/sana-os.md)
+* [日本語 SANA OS概要](/ja/principles/sana-os.md)

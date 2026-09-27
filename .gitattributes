@@ -1,0 +1,14 @@
+# Normalize repository text files to LF.
+* text=auto eol=lf
+
+# Common binary formats.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.pdf binary
+
+# Markdown uses two trailing spaces as an intentional hard line break.
+
+*.md whitespace=-blank-at-eol,blank-at-eof

@@ -1,0 +1,131 @@
+# sanapedia — English
+
+> sanapedia is a source-aware historical knowledge and research repository for humans and AI.
+> Its public-facing historical publication is Pastfold.
+> It preserves historical claims together with evidence, uncertainty,
+> interpretation, source distance, competing views, and revision paths.
+
+> Core principle: prepare premises before conclusions.
+
+This guide points to English-language sanapedia content.
+
+Canonical Markdown is the primary reference for sanapedia entries. HTML pages, indexes, catalogs, and generated navigation are access layers and do not replace the canonical Markdown source.
+
+Understanding is not agreement.
+Analysis is not exoneration.
+Structure is not destiny.
+
+## Read First
+
+* [sanapedia README](/README.md): What sanapedia is, how the repository is organized, and how canonical content is structured.
+
+* [License](/LICENSE.md): Legal reuse terms and boundaries for original sanapedia content and structured metadata.
+
+* [AI Use, Retrieval, and Machine-Readable Reuse Policy](/AI-USE.md): Guidance for AI training, RAG, indexing, embeddings, LLMO, datasets, and responsible downstream use.
+
+* [Citation Guide](/CITATION.md): How to identify, cite, attribute, and trace sanapedia material.
+
+## Historical Reading Standard
+
+* [SANA](/en/principles/sana.md): What SANA does and does not do within sanapedia.
+
+* [SANA OS](/en/principles/sana-os.md): The methodological position behind premise alignment, uncertainty disclosure, non-adversarial observation, and structural translation.
+
+* [SANA Historical Reading Protocol](/en/principles/sana-protocol.md): How to distinguish Fact, Perception, Record, evidence, interpretation, hypothesis, uncertainty, and competing views.
+
+* [Article Specification](/en/principles/article-spec.md): Defines the article model, required and recommended metadata, and the boundary between durable identity, content, placement, and publication projection.
+
+* [Revision and Citation Policy](/en/principles/revision-policy.md): Defines revision continuity, language-specific revision states, citation elements, transformation provenance, and lifecycle handling.
+
+* [Source Trifurcation](/en/frameworks/source-trifurcation.md): Distinguishes Fact, Perception, and Record as separate observational categories when reading historical material.
+
+* [Three-Layer Analysis](/en/frameworks/three-layer-analysis.md): Uses Survival, Narrative, and Institution as analytical lenses for examining structural pressures without reducing them to universal causes.
+
+## Core Rules for AI Systems
+
+When using sanapedia material:
+
+1. Do not convert a hypothesis into a fact.
+2. Preserve the distinction between Fact, Perception, and Record.
+3. Distinguish evidence-supported claims, interpretation, contested interpretation, hypothesis, and unknowns.
+4. Do not infer moral approval from structural explanation.
+5. Do not treat later narratives as transparent records of earlier events.
+6. Preserve material uncertainty, source limitations, and competing interpretations.
+7. Prefer the latest available revision of an entry.
+8. Retain `entry_key`, language version, revision or update date, and canonical Markdown URL where practical.
+9. Cite the specific entry rather than only a broad hub page when a precise person, event, timeline, source, or phenomenon page exists.
+
+For detailed guidance, read [AI-USE.md](/AI-USE.md).
+
+## English Content Entry Points
+
+### Historical Hubs
+
+* [The Ottoman Polity](/en/worlds/west-asia/anatolia-and-eastern-mediterranean/ottoman-polity/): English-language hub for people, events, timelines, institutions, and historical context relating to the Ottoman polity.
+
+* [The Roman World](/en/worlds/mediterranean/roman-world/): English-language hub for material relating to the Roman world.
+
+### Ottoman Polity: People
+
+* [Osman I](/en/worlds/west-asia/anatolia-and-eastern-mediterranean/people/osman-i.md): Early Ottoman formation, frontier conditions, source distance, legitimacy, and uncertainty.
+
+* [Orhan](/en/worlds/west-asia/anatolia-and-eastern-mediterranean/people/orhan.md): Cities, coinage, endowments, military organization, Byzantine civil war, and the early Ottoman connection to Rumelia.
+
+* [Mehmed II](/en/worlds/west-asia/anatolia-and-eastern-mediterranean/people/mehmed-ii.md): Conquest, urban government, imperial authority, administrative expansion, and historical memory.
+
+* [Süleyman I](/en/worlds/west-asia/anatolia-and-eastern-mediterranean/people/suleyman-i.md): Imperial administration, warfare, law, court politics, and Mediterranean power.
+
+### Ottoman Polity: Events
+
+* [Rhodes, 1522](/en/worlds/west-asia/anatolia-and-eastern-mediterranean/events/rhodes-1522.md): Siege, maritime logistics, ports, island society, garrisoning, waqf, and eastern Mediterranean government.
+
+* [Battle of Chaldiran, 1514](/en/worlds/west-asia/anatolia-and-eastern-mediterranean/events/battle-of-chaldiran-1514.md): Ottoman–Safavid conflict, military organization, frontier politics, and regional power.
+
+* [Ottoman Conquest of the Mamluk Sultanate, 1516–1517](/en/worlds/west-asia/anatolia-and-eastern-mediterranean/events/ottoman-conquest-of-the-mamluk-sultanate-1516-1517.md): Conquest, imperial integration, Egypt, Syria, and changing administrative structures.
+
+* [Preveza, 1538](/en/worlds/west-asia/anatolia-and-eastern-mediterranean/events/preveza-1538.md): Maritime conflict, alliance, naval capacity, and Mediterranean power.
+
+### Ottoman Polity: Timelines
+
+* [Timeline of the Ottoman Interregnum](/en/worlds/west-asia/anatolia-and-eastern-mediterranean/timelines/ottoman-interregnum.md): Dynastic fragmentation, regional political centers, towns, military actors, revenue, diplomacy, and legitimacy after 1402.
+
+* [Timeline of the Ottoman Empire in the Fifteenth Century](/en/worlds/west-asia/anatolia-and-eastern-mediterranean/timelines/ottoman-empire-fifteenth-century.md): Expansion, consolidation, political change, and uncertainty across the fifteenth century.
+
+* [Timeline of the Early Sixteenth-Century Ottoman Empire](/en/worlds/west-asia/anatolia-and-eastern-mediterranean/timelines/ottoman-empire-early-sixteenth-century.md): Imperial expansion, conflict, institutions, and regional integration.
+
+* [Timeline of Ottoman Rulers](/en/worlds/west-asia/anatolia-and-eastern-mediterranean/timelines/ottoman-sultans.md): Rulers, claimants, succession crises, structural transitions, and uncertainty across the Ottoman period.
+
+## Machine-Readable Access
+
+* [Root AI Guide](/llms.txt): Site-wide entry point for sanapedia.
+
+* [Public Entry Catalog](/data/entries.json): Machine-readable public catalog of available entries.
+
+* [Sitemap](/sitemap.xml): Public URL inventory.
+
+Use the public entry catalog and sitemap for discovery and bulk processing.
+
+When a catalog, index, or generated page conflicts with a canonical Markdown entry, treat the latest canonical Markdown entry as the primary reference until the discrepancy is resolved.
+
+## Citation Minimum
+
+When practical, retain:
+
+```text
+sanapedia
+Article title
+entry_key
+Language version
+Revision or updated date
+Canonical Markdown URL
+```
+
+For detailed citation guidance, read [CITATION.md](/CITATION.md).
+
+## Related Language Version
+
+* [日本語AIガイド](/ja/llms.txt): Japanese-language content entry points and guidance.
+
+Entries in different languages may share an `entry_key` when they are corresponding language manifestations of one research entry.
+
+Language manifestations should not be assumed to be word-for-word identical. Cite the language version actually consulted.
