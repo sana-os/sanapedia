@@ -1,0 +1,39 @@
+name: Sanapedia Validation
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate Registry v2 identity
+        run: python3 tools/validate_registry_v2_identity.py
+
+      - name: Validate Registry v2 catalog
+        run: python3 tools/validate_registry_v2_nlang.py
+
+      - name: Verify entries.json reproduction
+        run: python3 tools/generate_entries_json_v2_nlang.py
+
+      - name: Audit internal links
+        run: python3 tools/audit_internal_links_v2.py
+
+      - name: Classify missing references
+        run: python3 tools/classify_missing_links_v2.py
