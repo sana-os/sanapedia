@@ -286,7 +286,7 @@ Identify uncertainty, source limitations, and competing interpretations
 Offer a structural interpretation
 ↓
 Where necessary, develop a clearly marked and reversible hypothesis
-````
+```
 
 This sequence is not always linear.
 

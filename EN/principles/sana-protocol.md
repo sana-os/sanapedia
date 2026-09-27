@@ -199,7 +199,7 @@ Use the following marker:
 
 ```text
 【SANA’s Historical Mystery begins here — a reversible hypothesis】
-````
+```
 
 The Japanese version uses:
 
