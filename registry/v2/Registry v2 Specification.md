@@ -1,4 +1,4 @@
-# Pastfold Registry v2 Specification
+# Sanapedia Registry v2 Specification
 
 ## Status
 
@@ -87,7 +87,9 @@ sp_00000010,ja,JA/worlds/west-asia/anatolia-and-eastern-mediterranean/people/osm
 
 ## 3. Durable identity
 
-`entry_key` is the durable technical identity of a Pastfold knowledge unit.
+`entry_key` is the durable technical identity of a Sanapedia knowledge unit.
+
+Publication names, domains, hosts, and public URLs do not define this identity.
 
 Format:
 
@@ -283,7 +285,7 @@ Identity preservation and current publication are separate concerns.
 An identity may remain in `entry-registry.csv` even when it has no current
 language manifestation.
 
-This allows Pastfold to preserve lifecycle history and prevent identifier
+This allows Sanapedia to preserve lifecycle history and prevent identifier
 reuse for identities whose content has been:
 
 ```text
@@ -330,7 +332,7 @@ The durable identity remains `entry_key`.
 
 ## 11. Language relationships
 
-Pastfold does not require `translation_of` to relate manifestations of the
+Registry v2 does not require `translation_of` to relate manifestations of the
 same entry.
 
 Language manifestations are related through their shared `entry_key`.
@@ -398,7 +400,7 @@ en: 46
 ja: 46
 ```
 
-These numbers describe the current dataset.
+These numbers describe the dataset at the time of the initial Registry v2 migration.
 
 They are **not schema constraints**.
 
@@ -413,7 +415,7 @@ en
 ja
 ```
 
-as permanent Pastfold requirements.
+as permanent Sanapedia schema requirements.
 
 ---
 
@@ -487,8 +489,9 @@ The durable layers should be sufficient to reconstruct the projection layer.
 
 ## 17. Longevity principle
 
-Pastfold is intended to remain reconstructable even if the current brand,
-domain, software stack, or user interface no longer exists.
+Sanapedia's durable knowledge and registry layers are intended to remain
+reconstructable even if the current publication brand, domain, software stack,
+or user interface no longer exists.
 
 Therefore:
 
@@ -541,4 +544,4 @@ validate equivalence where applicable
 promote the new version explicitly
 ```
 
-Historical registry versions are part of Pastfold's provenance record.
+Historical registry versions are part of Sanapedia's provenance record.
