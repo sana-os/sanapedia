@@ -17,7 +17,7 @@ updated: "2026-09-27"
 
 # Mediterranean
 
-This page is a navigation index for current Pastfold research in the Mediterranean.
+This page is a navigation index for current sanapedia research in the Mediterranean.
 
 It does not define a separate historical research identity.
 

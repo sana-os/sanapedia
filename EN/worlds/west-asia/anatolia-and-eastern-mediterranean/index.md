@@ -17,7 +17,7 @@ updated: "2026-09-27"
 
 # Anatolia and the Eastern Mediterranean
 
-This page is a navigation index for current Pastfold research related to Anatolia and the eastern Mediterranean.
+This page is a navigation index for current sanapedia research related to Anatolia and the eastern Mediterranean.
 
 It does not define a separate historical research identity.
 

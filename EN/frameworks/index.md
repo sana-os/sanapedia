@@ -17,7 +17,7 @@ updated: "2026-09-26"
 
 # Frameworks
 
-This page is a navigation index for Pastfold methodological frameworks.
+This page is a navigation index for sanapedia methodological frameworks.
 
 It does not define a separate research identity.
 

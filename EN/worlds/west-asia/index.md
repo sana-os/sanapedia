@@ -17,7 +17,7 @@ updated: "2026-09-27"
 
 # West Asia
 
-This page is a navigation index for current Pastfold research in West Asia.
+This page is a navigation index for current sanapedia research in West Asia.
 
 It does not define a separate historical research identity.
 

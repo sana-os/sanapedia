@@ -17,7 +17,7 @@ updated: "2026-09-26"
 
 # 方法論
 
-このページは、Pastfoldの方法論frameworkへのnavigation indexです。
+このページは、sanapediaの方法論frameworkへのnavigation indexです。
 
 独立したresearch identityを定義するページではありません。
 

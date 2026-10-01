@@ -17,7 +17,7 @@ updated: "2026-09-27"
 
 # 地中海
 
-このページは、地中海に関する現在のPastfold研究へのnavigation indexです。
+このページは、地中海に関する現在のsanapedia研究へのnavigation indexです。
 
 独立したhistorical research identityを定義するページではありません。
 
