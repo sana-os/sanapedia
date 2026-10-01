@@ -6,10 +6,10 @@ slug: "three-layer-analysis"
 entity_type: "principle"
 content_type: "principle"
 status: "provisional"
-revision: "0.1"
+revision: "0.2"
 language: "en"
 published: "2026-09-13"
-updated: "2026-09-13"
+updated: "2026-10-02"
 ---------------------
 
 # Three-Layer Analysis
@@ -281,14 +281,14 @@ It is not a substitute for source criticism, chronology, comparative research, a
 
 ## 11. Relationship to other methodology
 
-Three-Layer Analysis is one part of the wider Pastfold historical-reading method.
+Three-Layer Analysis is one part of the wider sanapedia historical-reading method.
 
 It should be read together with:
 
 * SANA Historical Reading Protocol — the broader reading and documentation standard;
 * Source Trifurcation — separation of Fact, Perception, and Record;
 * Revision and Citation Policy — preservation of provenance and epistemic status during revision and reuse;
-* Article Specification — structural and metadata requirements for Pastfold knowledge pages.
+* Article Specification — structural and metadata requirements for sanapedia knowledge pages.
 
 These documents operate at different analytical layers.
 
@@ -308,4 +308,4 @@ Article Specification asks:
 
 > How is the knowledge object represented and maintained?
 
-Keeping these responsibilities separate helps Pastfold distinguish evidence from analytical framework while still examining how material conditions, narratives, and institutions interact.
+Keeping these responsibilities separate helps sanapedia distinguish evidence from analytical framework while still examining how material conditions, narratives, and institutions interact.

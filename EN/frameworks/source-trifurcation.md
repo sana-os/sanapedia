@@ -5,10 +5,10 @@ slug: "source-trifurcation"
 entity_type: "principle"
 content_type: "principle"
 status: "provisional"
-revision: "0.1"
+revision: "0.2"
 language: "en"
 published: "2026-09-13"
-updated: "2026-09-13"
+updated: "2026-10-02"
 ---
 
 # Source Trifurcation
@@ -285,7 +285,7 @@ Source criticism, archaeology, philology, chronology, area studies, material ana
 
 ## 10. Relationship to other methodology
 
-Source Trifurcation is one part of the wider Pastfold historical-reading method.
+Source Trifurcation is one part of the wider sanapedia historical-reading method.
 
 It should be read together with:
 

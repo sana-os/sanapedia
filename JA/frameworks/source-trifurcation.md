@@ -5,10 +5,10 @@ slug: "source-trifurcation"
 entity_type: "principle"
 content_type: "principle"
 status: "provisional"
-revision: "0.1"
+revision: "0.2"
 language: "ja"
 published: "2026-09-13"
-updated: "2026-09-13"
+updated: "2026-10-02"
 ---
 
 # 史料三分法
@@ -295,7 +295,7 @@ source criticism、考古学、文献学、chronology、地域研究、material 
 
 ## 10. 他のmethodologyとの関係
 
-史料三分法は、Pastfoldのhistorical-reading methodを構成する一部である。
+史料三分法は、sanapediaのhistorical-reading methodを構成する一部である。
 
 以下の文書とあわせて読む。
 
