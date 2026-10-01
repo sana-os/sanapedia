@@ -17,7 +17,7 @@ LANGUAGE_REGISTRY = (
     ROOT / "registry" / "v2" / "entry-language-registry.csv"
 )
 
-CANONICAL_HOST = "pastfold.org"
+CANONICAL_HOST = "sanapedia.net"
 
 ROUTE_CLASS = {
     "historical_hub": None,
@@ -1162,7 +1162,7 @@ def main():
         "anchor existence is not yet validated"
     )
     print(
-        "Pastfold absolute URLs are treated "
+        "Sanapedia absolute URLs are treated "
         "as internal references."
     )
     print()

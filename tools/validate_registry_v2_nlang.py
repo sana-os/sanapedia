@@ -20,7 +20,7 @@ CATALOG = (
     ROOT / "public" / "data" / "entries.json"
 )
 
-ORIGIN = "https://pastfold.org"
+ORIGIN = "https://sanapedia.net"
 
 ENTRY_KEY_RE = re.compile(r"^sp_[0-9]{8}$")
 
@@ -798,7 +798,7 @@ def main():
     info.append(
         "Public URLs are independently derived "
         "from manifestation path + frontmatter "
-        "+ Pastfold URL rules."
+        "+ Sanapedia URL rules."
     )
 
     print(
