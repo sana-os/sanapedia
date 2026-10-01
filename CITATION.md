@@ -19,6 +19,14 @@ It is part of preserving the path from a historical claim to its context, uncert
 For licensing and reuse terms, see [`LICENSE.md`](LICENSE.md).
 For AI, retrieval, indexing, and machine-readable reuse guidance, see [`AI-USE.md`](AI-USE.md).
 
+## About the examples in this guide
+
+Citation examples in this guide are illustrative snapshots of citation format.
+
+Revision numbers, update dates, access dates, titles, and publication URLs shown in examples do not necessarily represent the latest state of an entry.
+
+For a current citation, use the metadata in the entry being consulted and, where appropriate, confirm it against `public/data/entries.json`.
+
 ---
 
 ## 1. Recommended citation elements
@@ -132,6 +140,8 @@ If a page is marked provisional, superseded, redirected, or withdrawn, retain th
 ---
 
 ## 5. Human-readable citation examples
+
+The examples below illustrate citation structure and may preserve earlier revision snapshots.
 
 ### 5.1 English article citation
 
