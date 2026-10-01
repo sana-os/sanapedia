@@ -5,17 +5,17 @@ slug: "article-spec"
 entity_type: "policy"
 content_type: "policy"
 status: "provisional"
-revision: "0.1"
+revision: "0.2"
 language: "ja"
 published: "2026-09-13"
-updated: "2026-09-13"
+updated: "2026-10-02"
 ---
 
 # 記事仕様
 
 ## 1. 目的
 
-この文書は、公開されるPastfold知識ページの構造要件を定義する。
+この文書は、公開されるsanapedia知識ページの構造要件を定義する。
 
 本仕様は、以下を支えるために存在する。
 
@@ -138,7 +138,7 @@ editorial understandingの変化によって `entity_type` が変わることは
 
 ### `content_type`
 
-そのページがPastfold内でどのような機能を持つかを示す。
+そのページがsanapedia内でどのような機能を持つかを示す。
 
 許可値:
 
@@ -270,7 +270,7 @@ chronologyに不確実性がある場合、その不確実性は本文で説明�
 
 ### `license`
 
-Pastfold original contentまたはpage-specific reuse conditionに関するlicense情報。
+sanapedia original contentまたはpage-specific reuse conditionに関するlicense情報。
 
 適切な場合、repository-level defaultを継承してよい。
 
@@ -305,7 +305,7 @@ metadataは、これらの状態を要約したりsignalとして示したりし
 
 ## 6. 永続identityとeditorial placement
 
-Pastfoldでは、durable identityとeditorial placementを分離する。
+sanapediaでは、durable identityとeditorial placementを分離する。
 
 `entry_key` がidentityである。
 
@@ -402,4 +402,4 @@ publication outputは、このlayerから再構築できる。
 
 この分離は意図的なものである。
 
-名称、URL、interface、publication system、editorial organizationが変わっても、Pastfoldは再構築可能であるべきだ。
+名称、URL、interface、publication system、editorial organizationが変わっても、sanapediaは再構築可能であるべきだ。

@@ -5,17 +5,17 @@ slug: "article-spec"
 entity_type: "policy"
 content_type: "policy"
 status: "provisional"
-revision: "0.1"
+revision: "0.2"
 language: "en"
 published: "2026-09-13"
-updated: "2026-09-13"
+updated: "2026-10-02"
 ---
 
 # Article Specification
 
 ## 1. Purpose
 
-This document defines the structural requirements of a public Pastfold knowledge page.
+This document defines the structural requirements of a public sanapedia knowledge page.
 
 The specification exists to support:
 
@@ -138,7 +138,7 @@ Such a change does not alter identity.
 
 ### `content_type`
 
-Describes how the page functions within Pastfold.
+Describes how the page functions within sanapedia.
 
 Allowed values:
 
@@ -270,7 +270,7 @@ It does not replace direct reading of the relevant claims, evidence, uncertainti
 
 ### `license`
 
-License information for original Pastfold content or page-specific reuse conditions.
+License information for original sanapedia content or page-specific reuse conditions.
 
 Repository-level defaults may be inherited where appropriate.
 
@@ -305,7 +305,7 @@ It must not flatten them.
 
 ## 6. Durable identity and editorial placement
 
-Pastfold separates durable identity from editorial placement.
+sanapedia separates durable identity from editorial placement.
 
 The `entry_key` is identity.
 
@@ -402,4 +402,4 @@ Together, these documents separate:
 
 That separation is intentional.
 
-Pastfold should remain reconstructible even when names, URLs, interfaces, publication systems, or editorial organization change.
+sanapedia should remain reconstructible even when names, URLs, interfaces, publication systems, or editorial organization change.
