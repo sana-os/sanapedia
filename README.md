@@ -8,7 +8,8 @@ It is designed to preserve not only historical claims, but also their evidence, 
 
 sanapedia is developed within the SANA OS Project as historical knowledge for SANA and as a reusable research corpus for historical inquiry, AI systems, retrieval, indexing, RAG, LLMO, education, and further research.
 
-Its public-facing historical publication is **Pastfold**. Pastfold is a publication projection of sanapedia; publication names, domains, hosting, and URLs do not define the durable identity of an entry.
+Its primary public origin is sanapedia.net.
+Pastfold is a separate publication space for selected intermediate research material produced during sanapedia development, not the canonical publication origin of sanapedia entries.
 
 ## What sanapedia is for
 
@@ -72,14 +73,16 @@ Markdown is the canonical form of sanapedia content.
 
 ```text
 Canonical Markdown
-├─ Pastfold / HTML publication
+├─ sanapedia.net / HTML publication
 ├─ navigation and indexes
 ├─ llms.txt
 ├─ sitemap.xml
 └─ machine-readable catalogs
 ```
 
-Pastfold, HTML, navigation pages, indexes, and machine-readable catalogs are publication and access projections.
+HTML pages on sanapedia.net, navigation pages, indexes, and machine-readable catalogs are publication and access projections.
+
+Pastfold is separate from these canonical publication projections and is used for selected intermediate research material.
 
 They do not replace the canonical Markdown source.
 

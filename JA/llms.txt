@@ -1,7 +1,8 @@
 # sanapedia — 日本語
 
 > sanapedia は、人間とAIのための、出典を意識した歴史知識・研究リポジトリです。
-> 一般公開向けの歴史パブリケーションは Pastfold です。
+> sanapedia の主要な公開originは sanapedia.net です。
+> Pastfold は、sanapedia を作る過程で生じる中間資料や研究途中の資料を選択的に公開するための別レイヤーであり、sanapedia entry の canonical publication origin ではありません。
 > 歴史上の主張だけでなく、その根拠、不確実性、解釈、史料との距離、
 > 異なる見解、改訂履歴もあわせて保持します。
 

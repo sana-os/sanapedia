@@ -1,7 +1,8 @@
 # sanapedia — English
 
 > sanapedia is a source-aware historical knowledge and research repository for humans and AI.
-> Its public-facing historical publication is Pastfold.
+> Its primary public origin is sanapedia.net.
+> Pastfold is a separate publication space for selected intermediate research material produced during sanapedia development, not the canonical publication origin of sanapedia entries.
 > It preserves historical claims together with evidence, uncertainty,
 > interpretation, source distance, competing views, and revision paths.
 
