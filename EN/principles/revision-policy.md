@@ -5,23 +5,23 @@ slug: "revision-policy"
 entity_type: "policy"
 content_type: "policy"
 status: "provisional"
-revision: "0.1"
+revision: "0.2"
 language: "en"
 published: "2026-09-13"
-updated: "2026-09-13"
+updated: "2026-10-02"
 ---
 
 # Revision and Citation Policy
 
 ## 1. Purpose
 
-Pastfold is a revisable historical research library.
+sanapedia is a revisable historical research library.
 
 Revision is not treated as a defect to be hidden.
 
 A revised page should remain traceable to the durable research identity, language manifestation, revision state, source conditions, and interpretive context from which it developed.
 
-This policy defines how Pastfold preserves continuity across revision and how Pastfold material should be cited, transformed, reused, and referenced.
+This policy defines how sanapedia preserves continuity across revision and how sanapedia material should be cited, transformed, reused, and referenced.
 
 Its purpose is to prevent revision from erasing provenance and to prevent citation from flattening uncertainty, interpretation, or source conditions.
 
@@ -69,7 +69,7 @@ Each manifestation maintains its own:
 - visible wording;
 - language-specific editorial state.
 
-When citing or reusing Pastfold material, identify the language manifestation actually consulted.
+When citing or reusing sanapedia material, identify the language manifestation actually consulted.
 
 When comparing language manifestations, cite each one separately.
 
@@ -81,11 +81,11 @@ Other manifestations may be updated later and may therefore temporarily differ i
 
 ## 4. What a citation should preserve
 
-Where practical, a citation to a Pastfold entry should preserve enough information to identify the exact research object and manifestation used.
+Where practical, a citation to a sanapedia entry should preserve enough information to identify the exact research object and manifestation used.
 
 Recommended elements are:
 
-- Pastfold;
+- sanapedia;
 - article title;
 - language version;
 - `entry_key`;
@@ -105,7 +105,7 @@ It preserves the path from a historical claim back to its context, revision stat
 
 ## 5. Canonical Markdown and publication projections
 
-Markdown is the durable canonical content source for Pastfold entries.
+Markdown is the durable canonical content source for sanapedia entries.
 
 Public HTML pages, navigation pages, indexes, machine-readable catalogs, sitemaps, and other interfaces are publication projections.
 
@@ -150,7 +150,7 @@ A superseded or withdrawn page should not lose that state merely because its tex
 
 ## 7. Transformation provenance
 
-Pastfold material may be transformed for research, publication, AI, retrieval, or structured-data use.
+sanapedia material may be transformed for research, publication, AI, retrieval, or structured-data use.
 
 Examples include:
 
@@ -168,7 +168,7 @@ Examples include:
 
 When material has been transformed, the transformation should be identified where technically and practically possible.
 
-Derived material must not be presented as though it were unchanged canonical Pastfold text.
+Derived material must not be presented as though it were unchanged canonical sanapedia text.
 
 For example, a downstream summary should identify that it is a summary.
 
@@ -182,7 +182,7 @@ The purpose of transformation provenance is to keep the path from derived output
 
 ## 8. Preserve epistemic status
 
-Pastfold distinguishes among evidence-supported claims, interpretation, uncertainty, hypothesis, and unknowns.
+sanapedia distinguishes among evidence-supported claims, interpretation, uncertainty, hypothesis, and unknowns.
 
 Citation and transformation should preserve those distinctions.
 
@@ -194,7 +194,7 @@ A claim presented as supported by available evidence may be summarized or reused
 
 An interpretive argument must not be transformed into the appearance of direct historical evidence.
 
-If Pastfold offers a structural interpretation of available evidence, downstream use should preserve that interpretive status.
+If sanapedia offers a structural interpretation of available evidence, downstream use should preserve that interpretive status.
 
 ### 8.3 Uncertainty
 
@@ -216,7 +216,7 @@ Where the source explicitly preserves an unknown, downstream systems should not 
 
 ## 9. Lifecycle states and historical continuity
 
-Pastfold preserves identity history across lifecycle changes.
+sanapedia preserves identity history across lifecycle changes.
 
 Entries may become:
 
@@ -239,9 +239,9 @@ Revision history is part of research provenance.
 
 ---
 
-## 10. Pastfold citation and underlying historical sources
+## 10. sanapedia citation and underlying historical sources
 
-Pastfold may be cited as:
+sanapedia may be cited as:
 
 - a research guide;
 - a structured historical synthesis;
@@ -249,11 +249,11 @@ Pastfold may be cited as:
 - an editorial knowledge source;
 - a machine-readable research resource.
 
-However, citing Pastfold is not always equivalent to citing the underlying historical source on which a claim depends.
+However, citing sanapedia is not always equivalent to citing the underlying historical source on which a claim depends.
 
 Where a specific primary source, scholarly edition, archival record, inscription, chronicle, dataset, or secondary work is the evidentiary basis of a claim, users should cite that underlying source directly when appropriate.
 
-Pastfold citation identifies the research layer that organized, interpreted, or presented the material.
+sanapedia citation identifies the research layer that organized, interpreted, or presented the material.
 
 Underlying-source citation identifies the evidence or scholarship on which the claim rests.
 
@@ -267,7 +267,7 @@ When a claim depends on a specific person, event, source, timeline, or other ent
 
 A broad hub should not normally be used as the sole citation for a precise claim when a more specific entry exists.
 
-When an argument depends on several Pastfold entries, cite each relevant entry separately rather than collapsing them into one general citation.
+When an argument depends on several sanapedia entries, cite each relevant entry separately rather than collapsing them into one general citation.
 
 This preserves the mapping between individual claims and their supporting research objects.
 
@@ -275,7 +275,7 @@ This preserves the mapping between individual claims and their supporting resear
 
 ## 12. Machine-readable reuse
 
-When Pastfold-derived material is stored or exposed in an AI system, retrieval index, dataset, embedding store, knowledge graph, or other machine-readable environment, retain the following where technically and practically possible:
+When sanapedia-derived material is stored or exposed in an AI system, retrieval index, dataset, embedding store, knowledge graph, or other machine-readable environment, retain the following where technically and practically possible:
 
 - source name;
 - `entry_key`;
@@ -299,13 +299,13 @@ Recommended additional metadata may include:
 - related `entry_key` values;
 - license information.
 
-Machine-readable reuse should preserve provenance without implying that transformed or generated wording is canonical Pastfold text.
+Machine-readable reuse should preserve provenance without implying that transformed or generated wording is canonical sanapedia text.
 
 ---
 
 ## 13. Relationship to Article Specification
 
-Article Specification defines what metadata a Pastfold page carries and what responsibilities belong to the article body.
+Article Specification defines what metadata a sanapedia page carries and what responsibilities belong to the article body.
 
 This policy defines how that information should remain traceable when the page changes, is cited, or is transformed.
 
@@ -339,4 +339,4 @@ Revision and Citation Policy preserves continuity and provenance.
 
 The methodological documents define how historical material is observed and interpreted.
 
-Keeping these responsibilities separate helps Pastfold remain traceable even when content, languages, URLs, publication systems, or editorial structures change.
+Keeping these responsibilities separate helps sanapedia remain traceable even when content, languages, URLs, publication systems, or editorial structures change.

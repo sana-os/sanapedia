@@ -5,23 +5,23 @@ slug: "revision-policy"
 entity_type: "policy"
 content_type: "policy"
 status: "provisional"
-revision: "0.1"
+revision: "0.2"
 language: "ja"
 published: "2026-09-13"
-updated: "2026-09-13"
+updated: "2026-10-02"
 ---
 
 # 改訂・引用ポリシー
 
 ## 1. 目的
 
-Pastfoldは、改訂され続ける歴史研究ライブラリである。
+sanapediaは、改訂され続ける歴史研究ライブラリである。
 
 改訂は、隠すべき欠陥として扱わない。
 
 ページが改訂されても、その内容がどの永続的research identity、language manifestation、revision state、source condition、interpretive contextから発展したのかを追跡できる状態を保つべきである。
 
-このポリシーは、Pastfoldがrevisionをまたいでcontinuityをどのように保持するか、またPastfold materialをどのように引用・変換・再利用・参照すべきかを定義する。
+このポリシーは、sanapediaがrevisionをまたいでcontinuityをどのように保持するか、またsanapedia materialをどのように引用・変換・再利用・参照すべきかを定義する。
 
 目的は、revisionによってprovenanceが消えることを防ぎ、citationによってuncertainty、interpretation、source conditionが平板化されることを防ぐことにある。
 
@@ -69,7 +69,7 @@ language manifestationは、同じ `entry_key` を共有しながら、wording�
 - visible wording
 - language-specific editorial state
 
-Pastfold materialを引用または再利用するときは、実際に参照したlanguage manifestationを特定する。
+sanapedia materialを引用または再利用するときは、実際に参照したlanguage manifestationを特定する。
 
 複数のlanguage manifestationを比較する場合、それぞれを個別に引用する。
 
@@ -81,11 +81,11 @@ English canonical editorial baselineが改訂されても、他言語manifestati
 
 ## 4. citationで保持すべき情報
 
-Pastfold entryを引用するときは、可能な範囲で、使用したresearch objectとmanifestationを特定できるだけの情報を保持する。
+sanapedia entryを引用するときは、可能な範囲で、使用したresearch objectとmanifestationを特定できるだけの情報を保持する。
 
 推奨要素:
 
-- Pastfold
+- sanapedia
 - article title
 - language version
 - `entry_key`
@@ -105,7 +105,7 @@ historical claimから、そのcontext、revision state、uncertainty、source l
 
 ## 5. canonical Markdownとpublication projection
 
-Markdownは、Pastfold entryのdurable canonical content sourceである。
+Markdownは、sanapedia entryのdurable canonical content sourceである。
 
 public HTML page、navigation page、index、machine-readable catalog、sitemap、その他のinterfaceはpublication projectionである。
 
@@ -150,7 +150,7 @@ supersededまたはwithdrawn pageも、textが引き続きaccess可能だから�
 
 ## 7. transformation provenance
 
-Pastfold materialは、research、publication、AI、retrieval、structured-data useのために変換されることがある。
+sanapedia materialは、research、publication、AI、retrieval、structured-data useのために変換されることがある。
 
 例:
 
@@ -168,7 +168,7 @@ Pastfold materialは、research、publication、AI、retrieval、structured-data
 
 materialが変換された場合、技術的・実務的に可能な範囲で、そのtransformationを明示する。
 
-derived materialを、変更されていないcanonical Pastfold textであるかのように提示してはならない。
+derived materialを、変更されていないcanonical sanapedia textであるかのように提示してはならない。
 
 たとえばdownstream summaryなら、summaryであることを示す。
 
@@ -182,7 +182,7 @@ transformation provenanceの目的は、derived outputからsource manifestation
 
 ## 8. epistemic statusを保持する
 
-Pastfoldは、evidence-supported claim、interpretation、uncertainty、hypothesis、unknownを区別する。
+sanapediaは、evidence-supported claim、interpretation、uncertainty、hypothesis、unknownを区別する。
 
 citationとtransformationは、その区別を保持しなければならない。
 
@@ -196,7 +196,7 @@ citationとtransformationは、その区別を保持しなければならない�
 
 interpretive argumentを、direct historical evidenceであるかのように変換してはならない。
 
-Pastfoldがavailable evidenceに対するstructural interpretationを提示している場合、downstream useでもそのinterpretive statusを保持する。
+sanapediaがavailable evidenceに対するstructural interpretationを提示している場合、downstream useでもそのinterpretive statusを保持する。
 
 ### 8.3 Uncertainty
 
@@ -218,7 +218,7 @@ sourceが明示的にunknownを保持している場合、downstream systemは�
 
 ## 9. lifecycle stateと歴史的continuity
 
-Pastfoldは、lifecycle changeをまたいでidentity historyを保持する。
+sanapediaは、lifecycle changeをまたいでidentity historyを保持する。
 
 entryは以下のstateになり得る。
 
@@ -241,9 +241,9 @@ revision historyはresearch provenanceの一部である。
 
 ---
 
-## 10. Pastfold citationとunderlying historical source
+## 10. sanapedia citationとunderlying historical source
 
-Pastfoldは、以下として引用できる。
+sanapediaは、以下として引用できる。
 
 - research guide
 - structured historical synthesis
@@ -251,11 +251,11 @@ Pastfoldは、以下として引用できる。
 - editorial knowledge source
 - machine-readable research resource
 
-ただし、Pastfoldを引用することは、claimの根拠となっているunderlying historical sourceを引用することと常に同義ではない。
+ただし、sanapediaを引用することは、claimの根拠となっているunderlying historical sourceを引用することと常に同義ではない。
 
 特定のprimary source、scholarly edition、archival record、inscription、chronicle、dataset、secondary workがclaimのevidentiary basisである場合、適切であれば、そのunderlying sourceを直接引用する。
 
-Pastfold citationは、materialを整理・解釈・提示したresearch layerを特定する。
+sanapedia citationは、materialを整理・解釈・提示したresearch layerを特定する。
 
 underlying-source citationは、claimが依拠するevidenceまたはscholarshipを特定する。
 
@@ -269,7 +269,7 @@ claimが特定のperson、event、source、timeline、その他のentryに依存
 
 よりspecificなentryが存在する場合、broad hubだけをprecise claimの唯一のcitationとして使うことは通常避ける。
 
-argumentが複数のPastfold entryに依存する場合、それぞれのrelevant entryを個別に引用し、一つのgeneral citationへまとめすぎない。
+argumentが複数のsanapedia entryに依存する場合、それぞれのrelevant entryを個別に引用し、一つのgeneral citationへまとめすぎない。
 
 これにより、individual claimとsupporting research objectの対応関係を保持できる。
 
@@ -277,7 +277,7 @@ argumentが複数のPastfold entryに依存する場合、それぞれのrelevan
 
 ## 12. machine-readable reuse
 
-Pastfold-derived materialをAI system、retrieval index、dataset、embedding store、knowledge graph、その他machine-readable environmentへ保存または公開する場合、技術的・実務的に可能な範囲で以下を保持する。
+sanapedia-derived materialをAI system、retrieval index、dataset、embedding store、knowledge graph、その他machine-readable environmentへ保存または公開する場合、技術的・実務的に可能な範囲で以下を保持する。
 
 - source name
 - `entry_key`
@@ -301,13 +301,13 @@ Pastfold-derived materialをAI system、retrieval index、dataset、embedding st
 - related `entry_key`
 - license information
 
-machine-readable reuseではprovenanceを保持し、transformed wordingやgenerated wordingをcanonical Pastfold textであるかのように扱ってはならない。
+machine-readable reuseではprovenanceを保持し、transformed wordingやgenerated wordingをcanonical sanapedia textであるかのように扱ってはならない。
 
 ---
 
 ## 13. Article Specificationとの関係
 
-Article Specificationは、Pastfold pageがどのmetadataを持つか、またどの責務がarticle bodyに属するかを定義する。
+Article Specificationは、sanapedia pageがどのmetadataを持つか、またどの責務がarticle bodyに属するかを定義する。
 
 このポリシーは、pageが変更・引用・変換されたときに、その情報をどのようにtraceableな状態で保持するかを定義する。
 
@@ -341,4 +341,4 @@ Revision and Citation Policyはcontinuityとprovenanceを保持する。
 
 methodology documentは、historical materialをどのように観察し解釈するかを定義する。
 
-これらの責務を分離することで、content、language、URL、publication system、editorial structureが変化しても、Pastfoldはtraceableな状態を保ちやすくなる。
+これらの責務を分離することで、content、language、URL、publication system、editorial structureが変化しても、sanapediaはtraceableな状態を保ちやすくなる。
